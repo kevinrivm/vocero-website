@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vocero — El CRM de WhatsApp open source y agent-first</title>
+  <meta name="description" content="Vocero es el CRM de WhatsApp open source con un agente de IA que se pone a prueba solo. Bandeja en tiempo real, pipeline kanban y arquitectura de banderas para que cualquiera contribuya. Una instancia = un negocio, en tu servidor.">
+  <link rel="canonical" href="https://vocerocrm.com/">
+  <meta name="theme-color" content="#f7f9fc">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vocerocrm.com/">
+  <meta property="og:title" content="Vocero — El CRM de WhatsApp open source y agent-first">
+  <meta property="og:description" content="Bandeja en tiempo real, pipeline kanban y un agente de IA que se pone a prueba solo. Open source, MIT, en tu servidor. Iza tu propia bandera.">
+  <meta property="og:image" content="https://vocerocrm.com/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+</head>
+<body>
+
+  <!-- ======================= NAV ======================= -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="Vocero, inicio">
+        <svg class="brand-flag" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5v19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M5 3.5h12.5l-3.4 4.3 3.4 4.2H5z" fill="currentColor"/></svg>
+        <span>vocero</span>
+      </a>
+      <nav class="nav-links" aria-label="Secciones">
+        <a href="#producto">Producto</a>
+        <a href="#laboratorio">Laboratorio</a>
+        <a href="#banderas">Banderas</a>
+        <a href="#contribuir">Contribuir</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="gh-pill" href="https://github.com/kevinrivm/vocero-crm" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          <span class="gh-count" id="ghStarsNav">★ —</span>
+        </a>
+        <a class="btn btn-dark btn-sm" href="#contribuir">Despliega el tuyo <span class="arr">→</span></a>
+      </div>
+      <button class="nav-burger" id="navBurger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="#producto">Producto</a>
+      <a href="#laboratorio">Laboratorio</a>
+      <a href="#banderas">Banderas</a>
+      <a href="#contribuir">Contribuir</a>
+      <a href="https://github.com/kevinrivm/vocero-crm" target="_blank" rel="noopener">GitHub ↗</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+  <!-- ======================= HERO ======================= -->
+  <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="hero-grid"></div>
+      <div class="hero-glow hero-glow-a"></div>
+      <div class="hero-glow hero-glow-b"></div>
+    </div>
+
+    <div class="wrap hero-inner">
+      <div class="hero-badges reveal">
+        <a class="pill pill-soft" href="https://github.com/kevinrivm/vocero-crm/blob/main/LICENSE" target="_blank" rel="noopener">
+          <span class="dot dot-blue"></span> Open source · MIT
+        </a>
+        <a class="pill pill-new" href="https://github.com/kevinrivm/vocero-crm" target="_blank" rel="noopener">
+          <span class="tag-new">NUEVO</span> Bandera MULTICANAL — DMs de Instagram <span class="arr">→</span>
+        </a>
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line reveal d1">Tu agente</span>
+        <span class="line reveal d2"><span class="rotator" id="rotator" aria-live="polite"><span class="rot-word is-in">vende.</span></span></span>
+        <span class="line serif reveal d3">En un CRM que es tuyo.</span>
+      </h1>
+
+      <p class="hero-sub reveal d4">
+        Vocero es el CRM de WhatsApp <strong>open source</strong> y <strong>agent-first</strong>:
+        bandeja en tiempo real, pipeline kanban y un agente de IA que
+        <em>se pone a prueba solo</em>. Una instancia = un negocio. En tu servidor, con tus datos.
+      </p>
+
+      <div class="hero-ctas reveal d5">
+        <a class="btn btn-dark" href="https://github.com/kevinrivm/vocero-crm" target="_blank" rel="noopener">
+          <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.75.75 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25z"/></svg>
+          Dale una estrella <span class="arr">→</span>
+        </a>
+        <a class="btn btn-ghost" href="#demo">Ver el CRM en acción</a>
+      </div>
+
+      <div class="hero-meta mono reveal d6">
+        UNA INSTANCIA = UN NEGOCIO&nbsp;&nbsp;·&nbsp;&nbsp;TUS DATOS&nbsp;&nbsp;·&nbsp;&nbsp;TU LLM&nbsp;&nbsp;·&nbsp;&nbsp;TU SERVIDOR
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= TICKER ======================= -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track mono">
+      <span>NEXT.JS 15</span><i>◆</i><span>REACT 19</span><i>◆</i><span>TYPESCRIPT</span><i>◆</i><span>POSTGRESQL</span><i>◆</i><span>DRIZZLE ORM</span><i>◆</i><span>SERVER-SENT EVENTS</span><i>◆</i><span>DOCKER</span><i>◆</i><span>COOLIFY</span><i>◆</i><span>WHATSAPP CLOUD API</span><i>◆</i><span>LICENCIA MIT</span><i>◆</i>
+      <span>NEXT.JS 15</span><i>◆</i><span>REACT 19</span><i>◆</i><span>TYPESCRIPT</span><i>◆</i><span>POSTGRESQL</span><i>◆</i><span>DRIZZLE ORM</span><i>◆</i><span>SERVER-SENT EVENTS</span><i>◆</i><span>DOCKER</span><i>◆</i><span>COOLIFY</span><i>◆</i><span>WHATSAPP CLOUD API</span><i>◆</i><span>LICENCIA MIT</span><i>◆</i>
+    </div>
+  </div>
+
+  <!-- ======================= STATEMENT ======================= -->
+  <section class="statement" id="producto">
+    <div class="wrap-n">
+      <h2 class="statement-title reveal">
+        La infraestructura de ventas por WhatsApp <span class="serif accent">que te pertenece.</span>
+      </h2>
+      <p class="statement-sub reveal">
+        Nada de rentas por asiento ni datos en la nube de alguien más. Clonas el repo, lo despliegas
+        en tu servidor y el token de WhatsApp nunca sale de tu CRM. Y si ya tienes tu propio bot,
+        lo conectas por API y Vocero se encarga del resto.
+      </p>
+    </div>
+  </section>
+
+  <!-- ======================= DEMO GRANDE ======================= -->
+  <section class="demo-section" id="demo">
+    <div class="wrap">
+      <div class="app-frame reveal" id="demoFrame">
+        <div class="app-bar">
+          <span class="win-dots"><i></i><i></i><i></i></span>
+          <span class="app-bar-title mono">Vocero · Bandeja</span>
+          <span class="live-pill mono"><span class="live-dot"></span>EN VIVO</span>
+        </div>
+        <div class="app-body">
+          <!-- Sidebar -->
+          <aside class="app-side">
+            <div class="side-item is-active"><svg viewBox="0 0 24 24"><path d="M4 5h16v11H8l-4 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>Bandeja</span><b class="side-badge">3</b></div>
+            <div class="side-item"><svg viewBox="0 0 24 24"><path d="M4 5h4v14H4zM10 5h4v9h-4zM16 5h4v11h-4z" fill="none" stroke="currentColor" stroke-width="2"/></svg><span>Pipeline</span></div>
+            <div class="side-item"><svg viewBox="0 0 24 24"><path d="M9 3h6v4l3 9a4 4 0 0 1-4 5H10a4 4 0 0 1-4-5l3-9z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 7h6" stroke="currentColor" stroke-width="2"/></svg><span>Laboratorio</span></div>
+            <div class="side-item"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 9h16M8 3v4M16 3v4" stroke="currentColor" stroke-width="2"/></svg><span>Agenda</span><b class="side-flag mono">AGENDA=on</b></div>
+          </aside>
+          <!-- Lista de conversaciones -->
+          <div class="app-list">
+            <div class="list-head mono">CONVERSACIONES</div>
+            <div class="conv is-active">
+              <span class="ava" style="--h:210">M</span>
+              <div class="conv-txt"><b>María López</b><small id="convPreview">hola, ¿tienen impermeabilizante?</small></div>
+              <span class="conv-meta"><span class="chan chan-wa" title="WhatsApp"></span><time>ahora</time></span>
+            </div>
+            <div class="conv">
+              <span class="ava" style="--h:20">J</span>
+              <div class="conv-txt"><b>Jorge Ruiz</b><small>gracias, quedó agendado 🙌</small></div>
+              <span class="conv-meta"><span class="chan chan-wa"></span><time>12:40</time></span>
+            </div>
+            <div class="conv">
+              <span class="ava" style="--h:280">D</span>
+              <div class="conv-txt"><b>dani.arq</b><small>vi su publicación, ¿precio?</small></div>
+              <span class="conv-meta"><span class="chan chan-ig" title="Instagram"></span><time>12:07</time></span>
+            </div>
+            <div class="conv">
+              <span class="ava" style="--h:130">R</span>
+              <div class="conv-txt"><b>Rosa T.</b><small>¿hacen envíos a Guadalajara?</small></div>
+              <span class="conv-meta"><span class="chan chan-wa"></span><time>11:52</time></span>
+            </div>
+          </div>
+          <!-- Hilo -->
+          <div class="app-thread">
+            <div class="thread-head">
+              <div class="thread-who"><b>María López</b><span class="mono">+52 33 ···· 8214</span></div>
+              <div class="thread-mode" id="threadMode"><span class="mode-ia">Responde: <b>IA</b></span><button class="handoff" type="button">Pasar a humano</button></div>
+            </div>
+            <div class="chat" id="chatStage" aria-label="Conversación de demostración"></div>
+            <div class="chat-input"><span>Escribe un mensaje…</span><i class="send"></i></div>
+          </div>
+          <!-- Panel contacto -->
+          <aside class="app-contact">
+            <div class="contact-card">
+              <span class="ava ava-lg" style="--h:210">M</span>
+              <b>María López</b>
+              <small class="mono">LEAD DESDE WHATSAPP</small>
+            </div>
+            <div class="stage-block">
+              <div class="mono stage-label">ETAPA</div>
+              <div class="stages">
+                <span class="stg" data-stg="0">Nuevo</span>
+                <span class="stg" data-stg="1">Conversando</span>
+                <span class="stg" data-stg="2">Interesado</span>
+                <span class="stg" data-stg="3">Cliente</span>
+              </div>
+            </div>
+            <div class="note-block">
+              <div class="mono stage-label">NOTAS DEL AGENTE</div>
+              <p id="agentNote">Preguntó por impermeabilizante 5L. Detecto intención de compra…</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+      <p class="demo-caption mono reveal">ASÍ SE VE UNA VENTA CUANDO EL AGENTE TRABAJA PRIMERO — TRASPASO A HUMANO EN 1 CLIC</p>
+    </div>
+  </section>
+
+  <!-- ======================= 01 BANDEJA ======================= -->
+  <section class="chapter" id="bandeja">
+    <div class="wrap chapter-grid">
+      <div class="chapter-copy reveal">
+        <div class="kicker mono"><span class="kdot"></span>01 · BANDEJA</div>
+        <h3 class="chapter-title">La bandeja. <span class="serif accent">Tiempo real, cero pestañas de Meta.</span></h3>
+        <p>Cada mensaje entra al instante por Server-Sent Events. Ves quién respondió
+        —la IA o tu equipo—, el estado de cada mensaje y la ventana de 24 horas de Meta,
+        sin salirte del CRM.</p>
+        <ul class="feature-list">
+          <li><b>Estados reales</b>Enviado, entregado y leído, igual que en WhatsApp.</li>
+          <li><b>Ventana de 24 h vigilada</b>Si expira, Vocero te ofrece reabrir con plantilla aprobada.</li>
+          <li><b>Traspaso en 1 clic</b>La IA se detiene, tu equipo continúa. Y de regreso igual.</li>
+          <li><b>Contactos que se crean solos</b>Mensaje nuevo = lead nuevo en el pipeline.</li>
+        </ul>
+      </div>
+      <div class="chapter-visual reveal">
+        <div class="mini-frame">
+          <div class="mini-bar mono"><span class="win-dots"><i></i><i></i><i></i></span>Hilo · ventana 24 h</div>
+          <div class="mini-body pad">
+            <div class="msg in"><p>¿Me mandas la ficha técnica?</p><time>13:02</time></div>
+            <div class="msg out"><p>¡Claro! Aquí está la ficha del impermeabilizante 5L 📄</p><time>13:02 · IA <i class="ticks"></i></time></div>
+            <div class="window-bar">
+              <div class="window-track"><i></i></div>
+              <span class="mono">VENTANA 24H · 09:14 RESTANTES</span>
+            </div>
+            <div class="tpl-suggest">
+              <span class="mono">¿EXPIRÓ?</span> Reabrir con plantilla aprobada <span class="arr">→</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 02 AGENTE ======================= -->
+  <section class="chapter chapter-alt" id="agente">
+    <div class="wrap chapter-grid flip">
+      <div class="chapter-copy reveal">
+        <div class="kicker mono"><span class="kdot"></span>02 · AGENTE</div>
+        <h3 class="chapter-title">El agente. <span class="serif accent">Con tu conocimiento, no el de internet.</span></h3>
+        <p>Le das nombre, tono y reglas. Le cargas pares de pregunta/respuesta y bloques
+        de contexto. Solo responde con lo que sabe — y cuando no sabe, escala a tu equipo
+        en lugar de inventar.</p>
+        <ul class="feature-list">
+          <li><b>Trae tu propio LLM</b>Cualquier modelo vía OpenRouter: Claude, GPT, Gemini, Llama…</li>
+          <li><b>Anti-alucinación</b>Restricción de "solo responde lo conocido" + escalamiento.</li>
+          <li><b>Mensajes por lotes</b>Espera a que el cliente termine de escribir antes de contestar.</li>
+          <li><b>¿Ya tienes bot?</b>Apaga el agente y conecta el tuyo por <code class="mono">/api/bot/*</code>.</li>
+        </ul>
+      </div>
+      <div class="chapter-visual reveal">
+        <div class="mini-frame">
+          <div class="mini-bar mono"><span class="win-dots"><i></i><i></i><i></i></span>Agente · configuración</div>
+          <div class="mini-body pad config">
+            <div class="cfg-row">
+              <div class="cfg-label mono">PERSONA</div>
+              <div class="cfg-chip-row"><span class="cfg-chip is-on">Valentina</span><span class="cfg-chip">Cálida y directa</span><span class="cfg-chip">Cierra ventas</span></div>
+            </div>
+            <div class="cfg-row">
+              <div class="cfg-label mono">CEREBRO · OPENROUTER</div>
+              <div class="cfg-chip-row models"><span class="cfg-chip is-on">Claude</span><span class="cfg-chip">GPT-5</span><span class="cfg-chip">Gemini</span><span class="cfg-chip">Llama</span></div>
+            </div>
+            <div class="cfg-row">
+              <div class="cfg-label mono">CONOCIMIENTO</div>
+              <div class="kb-item"><span class="kb-q">¿Hacen envíos?</span><span class="kb-ok">✓ indexado</span></div>
+              <div class="kb-item"><span class="kb-q">Precios impermeabilizante 2026</span><span class="kb-ok">✓ indexado</span></div>
+              <div class="kb-item kb-new"><span class="kb-q">Garantías y devoluciones</span><span class="kb-ok kb-progress">indexando…</span></div>
+            </div>
+            <div class="cfg-row cfg-inline">
+              <div><div class="cfg-label mono">AGENTE GLOBAL</div><small>Apágalo y conecta tu propio bot</small></div>
+              <span class="switch is-on" aria-hidden="true"><i></i></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 03 LABORATORIO (dark) ======================= -->
+  <section class="lab" id="laboratorio">
+    <div class="wrap">
+      <div class="lab-head reveal">
+        <div class="kicker mono light"><span class="kdot"></span>03 · LABORATORIO</div>
+        <h3 class="lab-title">Deja de <span class="serif">esperar</span> que el bot funcione. <span class="serif accent-l">Mídelo.</span></h3>
+        <p class="lab-sub">Seis clientes simulados conversan contra tu agente real en un sandbox
+        que jamás toca la API de Meta. Un juez LLM independiente califica cada conversación
+        y te dice exactamente qué corregir.</p>
+      </div>
+
+      <div class="lab-grid">
+        <div class="lab-personas reveal">
+          <div class="mono lab-label">PERSONAS SIMULADAS</div>
+          <div class="persona"><span class="p-emoji">🎯</span><div><b>El comprador decidido</b><small>quiere pagar ya</small></div><span class="p-state ok mono">PASÓ</span></div>
+          <div class="persona"><span class="p-emoji">🧮</span><div><b>El preguntón de precios</b><small>compara todo</small></div><span class="p-state ok mono">PASÓ</span></div>
+          <div class="persona"><span class="p-emoji">😤</span><div><b>El cliente enojado</b><small>viene de un reclamo</small></div><span class="p-state ok mono">PASÓ</span></div>
+          <div class="persona is-flag"><span class="p-emoji">🕳️</span><div><b>El que pregunta lo que no sabes</b><small>busca huecos</small></div><span class="p-state warn mono">HALLAZGO</span></div>
+          <div class="persona"><span class="p-emoji">🙋</span><div><b>El que exige un humano</b><small>prueba el escalamiento</small></div><span class="p-state ok mono">PASÓ</span></div>
+          <div class="persona"><span class="p-emoji">💬</span><div><b>El que escribe "ke onda si benden pintura"</b><small>ortografía real</small></div><span class="p-state ok mono">PASÓ</span></div>
+        </div>
+
+        <div class="lab-verdict reveal">
+          <div class="score-card">
+            <div class="mono lab-label">VEREDICTO DEL JUEZ</div>
+            <div class="score-ring" id="scoreRing">
+              <svg viewBox="0 0 120 120">
+                <circle class="ring-bg" cx="60" cy="60" r="52"/>
+                <circle class="ring-val" id="ringVal" cx="60" cy="60" r="52"/>
+              </svg>
+              <div class="score-num"><b id="scoreNum">0</b><span>/100</span></div>
+            </div>
+            <div class="finding">
+              <span class="f-icon">⚠</span>
+              <p><b>Hueco de conocimiento:</b> inventó tiempo de entrega "2 días" — no está en la base.</p>
+            </div>
+            <button class="fix-btn" type="button"><span>＋</span> Agregar respuesta a la base de conocimiento</button>
+            <div class="history mono">
+              <span>CORRIDA #12</span>
+              <span class="hist-bars" aria-hidden="true"><i style="--v:.52"></i><i style="--v:.61"></i><i style="--v:.58"></i><i style="--v:.7"></i><i style="--v:.74"></i><i style="--v:.87" class="hot"></i></span>
+              <span class="up">▲ MEJORANDO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lab-foot mono reveal">SANDBOX AISLADO · CERO CONTACTO CON META · JUEZ CONFIGURABLE VÍA <span>OPENROUTER_JUDGE_MODEL</span></div>
+    </div>
+  </section>
+
+  <!-- ======================= 04 BANDERAS ======================= -->
+  <section class="chapter" id="banderas">
+    <div class="wrap chapter-grid">
+      <div class="chapter-copy reveal">
+        <div class="kicker mono"><span class="kdot"></span>04 · BANDERAS</div>
+        <h3 class="chapter-title">Las banderas. <span class="serif accent">Así crece Vocero.</span></h3>
+        <p>Cada capacidad opcional vive detrás de una <b>bandera de entorno</b>. Apagada,
+        no pesa nada: ni UI, ni rutas, ni prompts. Encendida, el módulo completo aparece.
+        Así el CRM se mantiene ligero y cada quien enciende solo lo que su negocio usa.</p>
+        <p>Es también el contrato de contribución: <b>la comunidad hace crecer el CRM
+        izando banderas nuevas</b>. Así nacieron la agenda y el multicanal — módulos
+        completos que no estorban a quien no los necesita.</p>
+        <ul class="feature-list">
+          <li><b><code class="mono">AGENDA</code></b>Huecos reales de calendario, Zoom / Google Meet, sin citas inventadas.</li>
+          <li><b><code class="mono">MULTICANAL</code></b>DMs de Instagram en la misma bandeja, mismo pipeline, mismo agente.</li>
+          <li><b><code class="mono">TU_BANDERA</code></b>El siguiente módulo lo puedes izar tú. <a href="#roadmap">Mira las propuestas ↓</a></li>
+        </ul>
+      </div>
+      <div class="chapter-visual reveal">
+        <div class="mini-frame flags-frame">
+          <div class="mini-bar mono"><span class="win-dots"><i></i><i></i><i></i></span>despliegue · variables de entorno</div>
+          <div class="mini-body pad">
+            <div class="env-line mono" id="envLine">AGENDA=<b>on</b>&nbsp;&nbsp;MULTICANAL=<b>on</b></div>
+            <div class="flag-toggles">
+              <label class="flag-toggle">
+                <div><span class="mono f-name">AGENDA</span><small>Motor de agendamiento</small></div>
+                <input type="checkbox" id="flagAgenda" checked><span class="switch"><i></i></span>
+              </label>
+              <label class="flag-toggle">
+                <div><span class="mono f-name">MULTICANAL</span><small>Instagram DM en la bandeja</small></div>
+                <input type="checkbox" id="flagMulti" checked><span class="switch"><i></i></span>
+              </label>
+            </div>
+            <div class="mono flags-caption">EL CRM RESULTANTE ↓</div>
+            <div class="mini-crm">
+              <div class="mini-side">
+                <span class="ms-item is-on">Bandeja</span>
+                <span class="ms-item is-on">Pipeline</span>
+                <span class="ms-item is-on">Laboratorio</span>
+                <span class="ms-item flag-agenda is-on">Agenda</span>
+              </div>
+              <div class="mini-main">
+                <span class="ms-chip flag-wa is-on">WhatsApp</span>
+                <span class="ms-chip flag-multi is-on">Instagram</span>
+                <div class="mini-rows"><i></i><i></i><i></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= ROADMAP DE BANDERAS ======================= -->
+  <section class="roadmap" id="roadmap">
+    <div class="wrap">
+      <div class="roadmap-head reveal">
+        <h3 class="section-title">Banderas que faltan. <span class="serif accent">Iza la tuya.</span></h3>
+        <p>El objetivo es ser el CRM más flexible y popular hecho en comunidad. Estas banderas
+        están esperando a alguien que las reclame — o propón una nueva en un issue.</p>
+      </div>
+      <div class="flag-cards">
+        <a class="flag-card reveal" href="https://github.com/kevinrivm/vocero-crm/issues" target="_blank" rel="noopener">
+          <svg class="fc-flag" viewBox="0 0 24 24"><path d="M5 2.5v19" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M5 3.5h12.5l-3.4 4.3 3.4 4.2H5z" fill="currentColor"/></svg>
+          <span class="mono fc-name">VOZ</span>
+          <p>Notas de voz transcritas para que el agente también entienda audios.</p>
+          <span class="fc-cta mono">RECLÁMALA <span class="arr">→</span></span>
+        </a>
+        <a class="flag-card reveal" href="https://github.com/kevinrivm/vocero-crm/issues" target="_blank" rel="noopener">
+          <svg class="fc-flag" viewBox="0 0 24 24"><path d="M5 2.5v19" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M5 3.5h12.5l-3.4 4.3 3.4 4.2H5z" fill="currentColor"/></svg>
+          <span class="mono fc-name">PAGOS</span>
+          <p>Links de pago dentro del chat: el agente cierra y cobra en la misma conversación.</p>
+          <span class="fc-cta mono">RECLÁMALA <span class="arr">→</span></span>
+        </a>
+        <a class="flag-card reveal" href="https://github.com/kevinrivm/vocero-crm/issues" target="_blank" rel="noopener">
+          <svg class="fc-flag" viewBox="0 0 24 24"><path d="M5 2.5v19" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M5 3.5h12.5l-3.4 4.3 3.4 4.2H5z" fill="currentColor"/></svg>
+          <span class="mono fc-name">REPORTES</span>
+          <p>Métricas de conversión por etapa, por canal y por agente (IA vs. humano).</p>
+          <span class="fc-cta mono">RECLÁMALA <span class="arr">→</span></span>
+        </a>
+        <a class="flag-card fc-wild reveal" href="https://github.com/kevinrivm/vocero-crm/issues/new" target="_blank" rel="noopener">
+          <span class="mono fc-name">TU_BANDERA</span>
+          <p>¿Tu negocio necesita algo que no existe? Propónlo. Si sirve a uno, le sirve a todos.</p>
+          <span class="fc-cta mono">PROPONER <span class="arr">→</span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= CONTRIBUIR ======================= -->
+  <section class="contribute" id="contribuir">
+    <div class="wrap">
+      <div class="roadmap-head reveal">
+        <h3 class="section-title">Hecho para que lo modifique <span class="serif accent">un asistente de IA.</span></h3>
+        <p>El repo trae specs de diseño en <code class="mono">specs/</code> y una guía de modificación
+        en <code class="mono">CLAUDE.md</code>. Clonas, le pasas el contexto a tu asistente,
+        y tu bandera sale en días — no en meses.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <span class="step-num mono">01</span>
+          <h4>Clona y despliega</h4>
+          <p>Pásale <code class="mono">INSTALL-IA.md</code> a tu asistente de IA, responde 3 preguntas
+          y tu instancia queda viva en Coolify o Docker.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num mono">02</span>
+          <h4>Lee las specs</h4>
+          <p><code class="mono">CLAUDE.md</code> + <code class="mono">specs/</code> explican las decisiones
+          de diseño para que tu asistente modifique sin romper.</p>
+        </div>
+        <div class="step reveal">
+          <span class="step-num mono">03</span>
+          <h4>Iza tu bandera</h4>
+          <p>Desarrolla tu módulo detrás de una bandera de entorno y abre tu PR.
+          Apagada no pesa; encendida, brilla.</p>
+        </div>
+      </div>
+      <div class="clone-box reveal">
+        <code class="mono" id="cloneCmd">git clone https://github.com/kevinrivm/vocero-crm.git</code>
+        <button class="copy-btn mono" type="button" data-copy="git clone https://github.com/kevinrivm/vocero-crm.git">COPIAR</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= STATS ======================= -->
+  <section class="stats">
+    <div class="wrap stats-grid">
+      <div class="stat reveal"><b><span class="count" id="statStars">—</span></b><span class="mono">ESTRELLAS EN GITHUB</span></div>
+      <div class="stat reveal"><b><span class="count" id="statForks">—</span></b><span class="mono">FORKS ACTIVOS</span></div>
+      <div class="stat reveal"><b><span class="count" data-target="2">0</span>+</b><span class="mono">BANDERAS IZADAS</span></div>
+      <div class="stat reveal"><b>MIT</b><span class="mono">ÚSALO · VÉNDELO · MODIFÍCALO</span></div>
+    </div>
+  </section>
+
+  <!-- ======================= CTA FINAL ======================= -->
+  <section class="final">
+    <div class="final-bg" aria-hidden="true"></div>
+    <div class="wrap-n final-inner reveal">
+      <div class="mono final-kicker">EL PLAN ES SIMPLE</div>
+      <h3 class="final-title">El CRM más flexible del mundo<br><span class="serif">no se compra.</span> <span class="serif accent-l">Se construye.</span></h3>
+      <p class="final-sub">Despliega tu instancia, ponla a prueba en el Laboratorio y,
+      cuando le falte algo, iza la bandera que falta. Una estrella también ayuda a que
+      más gente lo encuentre.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-light" href="https://github.com/kevinrivm/vocero-crm" target="_blank" rel="noopener">Ver en GitHub <span class="arr">→</span></a>
+        <a class="btn btn-outline" href="https://www.skool.com/vibe-community-vip" target="_blank" rel="noopener">Únete a VIBE Community</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="#top"><svg class="brand-flag" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 2.5v19" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path d="M5 3.5h12.5l-3.4 4.3 3.4 4.2H5z" fill="currentColor"/></svg><span>vocero</span></a>
+        <p>El CRM de WhatsApp open source con un agente de IA que se pone a prueba solo.</p>
+      </div>
+      <div class="footer-col">
+        <span class="mono">PROYECTO</span>
+        <a href="https://github.com/kevinrivm/vocero-crm" target="_blank" rel="noopener">GitHub ↗</a>
+        <a href="https://github.com/kevinrivm/vocero-crm#readme" target="_blank" rel="noopener">README</a>
+        <a href="https://github.com/kevinrivm/vocero-crm/blob/main/INSTALL-IA.md" target="_blank" rel="noopener">Instalar con IA</a>
+        <a href="https://github.com/kevinrivm/vocero-crm/blob/main/LICENSE" target="_blank" rel="noopener">Licencia MIT</a>
+      </div>
+      <div class="footer-col">
+        <span class="mono">COMUNIDAD</span>
+        <a href="https://github.com/kevinrivm/vocero-crm/issues" target="_blank" rel="noopener">Issues abiertos</a>
+        <a href="https://github.com/kevinrivm/vocero-crm/pulls" target="_blank" rel="noopener">Pull requests</a>
+        <a href="https://www.skool.com/vibe-community-vip" target="_blank" rel="noopener">VIBE Community ↗</a>
+      </div>
+      <div class="footer-col">
+        <span class="mono">CREADOR</span>
+        <a href="https://github.com/kevinrivm" target="_blank" rel="noopener">Kevin Belier</a>
+        <a href="https://aishia.cloud" target="_blank" rel="noopener">AISHIA ↗</a>
+      </div>
+    </div>
+    <div class="wrap footer-base mono">
+      <span>© 2026 VOCERO · LICENCIA MIT</span>
+      <span>UNA INSTANCIA = UN NEGOCIO</span>
+    </div>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
