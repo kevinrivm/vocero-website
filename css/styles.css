@@ -98,8 +98,28 @@ code.mono { font-size: 0.85em; background: var(--blue-wash); color: var(--blue-d
 .reveal.d5 { transition-delay: 0.5s; }
 .reveal.d6 { transition-delay: 0.62s; }
 
+/* Entrada del hero: animación CSS pura, no depende de JS */
+.rise {
+  opacity: 0;
+  animation: rise-in 0.95s cubic-bezier(0.2, 0.6, 0.2, 1) forwards;
+}
+.rise.r0 { animation-delay: 0.05s; }
+.rise.r1 { animation-delay: 0.14s; }
+.rise.r2 { animation-delay: 0.24s; }
+.rise.r3 { animation-delay: 0.34s; }
+.rise.r4 { animation-delay: 0.48s; }
+.rise.r5 { animation-delay: 0.6s; }
+.rise.r6 { animation-delay: 0.72s; }
+@keyframes rise-in {
+  from { opacity: 0; transform: translateY(26px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Los anclajes no deben esconderse bajo el nav fijo */
+[id] { scroll-margin-top: 90px; }
+
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
+  .reveal, .rise { opacity: 1; transform: none; transition: none; animation: none; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.001s !important; animation-iteration-count: 1 !important; }
 }
