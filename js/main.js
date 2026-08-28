@@ -52,7 +52,7 @@
   /* ---------- Hero: palabra rotativa (spans fijos, sin churn de DOM) ---------- */
   var rotator = document.getElementById("rotator");
   if (rotator && !reduceMotion) {
-    var words = ["vende.", "atiende.", "agenda.", "se mide.", "aprende."];
+    var words = ["que vende.", "multicanal.", "que agenda.", "open source.", "que es tuyo."];
     rotator.innerHTML = "";
     var spans = words.map(function (w, i) {
       var s = document.createElement("span");
@@ -130,31 +130,6 @@
       if (entries[0].isIntersecting && !running) { running = true; tick(); }
     }, { threshold: 0.25 });
     demoIO.observe(chat);
-  }
-
-  /* ---------- Laboratorio: anillo de score ---------- */
-  var ringVal = document.getElementById("ringVal");
-  var scoreNum = document.getElementById("scoreNum");
-  if (ringVal && scoreNum) {
-    var CIRC = 2 * Math.PI * 52; // r=52
-    ringVal.style.strokeDasharray = String(CIRC);
-    ringVal.style.strokeDashoffset = String(CIRC);
-    var scoreIO = new IntersectionObserver(function (entries) {
-      if (!entries[0].isIntersecting) return;
-      scoreIO.disconnect();
-      var target = 87;
-      ringVal.style.strokeDashoffset = String(CIRC * (1 - target / 100));
-      var start = null;
-      function count(ts) {
-        if (!start) start = ts;
-        var p = Math.min((ts - start) / 1600, 1);
-        var eased = 1 - Math.pow(1 - p, 3);
-        scoreNum.textContent = String(Math.round(eased * target));
-        if (p < 1) requestAnimationFrame(count);
-      }
-      requestAnimationFrame(count);
-    }, { threshold: 0.5 });
-    scoreIO.observe(ringVal);
   }
 
   /* ---------- Banderas: toggles interactivos ---------- */
