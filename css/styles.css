@@ -1387,3 +1387,12 @@ code.mono { font-size: 0.85em; background: var(--blue-wash); color: var(--blue-d
   .clone-box { flex-wrap: wrap; }
   .copy-btn { margin-left: 0; }
 }
+
+/* ============================================================
+   VOCERO CLOUD (edición alojada + datos de Google)
+   ============================================================ */
+.cloud { border-top: 1px solid var(--line); }
+.cloud-kicker { color: var(--blue); font-size: 0.7rem; letter-spacing: 0.16em; margin-bottom: 18px; }
+.cloud .statement-sub + .statement-sub { margin-top: 18px; }
+.cloud .statement-sub a { color: var(--blue); text-decoration: underline; }
+.cloud-ctas { justify-content: center; margin: 34px 0 0; }
